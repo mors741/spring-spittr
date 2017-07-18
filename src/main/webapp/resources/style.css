@@ -1,0 +1,9 @@
+.spittleMessage {
+    display: inline-block;
+}
+
+.spittleInfo {
+    padding-left: 20px;
+    opacity: 0.5;
+    color: darkblue;
+}

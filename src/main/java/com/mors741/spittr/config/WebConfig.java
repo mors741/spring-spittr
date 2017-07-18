@@ -5,6 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
@@ -18,6 +20,16 @@ public class WebConfig {
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
+    }
+
+    @Bean
+    public WebMvcConfigurerAdapter webMvcConfigurerAdapter() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+            }
+        };
     }
 
 }
