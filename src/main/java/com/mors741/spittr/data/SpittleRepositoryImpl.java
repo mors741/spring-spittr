@@ -3,9 +3,7 @@ package com.mors741.spittr.data;
 import com.mors741.spittr.Spittle;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class SpittleRepositoryImpl implements SpittleRepository{
@@ -16,6 +14,10 @@ public class SpittleRepositoryImpl implements SpittleRepository{
                 new Spittle("Message3", new Date(), 12.34, 43.21),
                 new Spittle("Message4", new Date(), 56.78, 87.65)
         );
-        return spittles;
+        if (count < spittles.size()) {
+            return spittles.subList(0, count);
+        } else {
+            return spittles;
+        }
     }
 }
