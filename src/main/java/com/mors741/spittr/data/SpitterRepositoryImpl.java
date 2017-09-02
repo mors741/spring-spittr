@@ -16,7 +16,8 @@ public class SpitterRepositoryImpl implements SpitterRepository {
 
     }
 
-    @Override public Spitter getByUsername(String username) {
+    @Override
+    public Spitter getByUsername(String username) {
         for (Spitter spitter : spitters) {
             if (spitter.getUsername().equals(username)) {
                 return spitter;

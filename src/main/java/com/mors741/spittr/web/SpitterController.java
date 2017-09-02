@@ -36,10 +36,10 @@ public class SpitterController {
         }
         repository.save(spitter);
         model.addAttribute("username", spitter.getUsername());
-        return "redirect:/spitter/{username}";
+        return "redirect:/spitter/profile/{username}";
     }
 
-    @RequestMapping("/{username}")
+    @RequestMapping("/profile/{username}")
     public String showSpitterProfile(@PathVariable("username") String username, Model model) {
         model.addAttribute(repository.getByUsername(username));
         return "profile";
