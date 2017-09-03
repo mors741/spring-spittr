@@ -10,6 +10,11 @@ import java.util.List;
 public class SpitterRepositoryImpl implements SpitterRepository {
     private static List<Spitter> spitters = new ArrayList<>();
 
+    static {
+        spitters.add(new Spitter("John", "Snow", "user", "password"));
+        spitters.add(new Spitter("Bruce", "Lee", "admin", "password"));
+    }
+
     @Override
     public void save(Spitter spitter) {
         spitters.add(spitter);
