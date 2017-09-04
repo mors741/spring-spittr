@@ -3,6 +3,7 @@ package com.mors741.spittr;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,25 +16,29 @@ public class Spitter {
     @Getter @Setter private long id;
 
     @NotNull
-    @Size(min=2, max=30)
+    @Size(min = 2, max = 30)
     @Getter @Setter private String firstName;
 
     @NotNull
-    @Size(min=2, max=30)
+    @Size(min = 2, max = 30)
     @Getter @Setter private String lastName;
 
+    @Email
+    @Getter @Setter private String email;
+
     @NotNull
-    @Size(min=5, max=16)
+    @Size(min = 5, max = 16)
     @Getter @Setter private String username;
 
     @NotNull
-    @Size(min=5, max=25)
+    @Size(min = 5, max = 25)
     @Getter @Setter private String password;
 
-    public Spitter(String firstName, String lastName, String username, String password) {
+    public Spitter(String firstName, String lastName, String email, String username, String password) {
         this.id = idGen++;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
         this.username = username;
         this.password = password;
     }

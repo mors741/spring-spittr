@@ -11,8 +11,8 @@ public class SpitterRepositoryImpl implements SpitterRepository {
     private static List<Spitter> spitters = new ArrayList<>();
 
     static {
-        spitters.add(new Spitter("John", "Snow", "user", "password"));
-        spitters.add(new Spitter("Bruce", "Lee", "admin", "password"));
+        spitters.add(new Spitter("John", "Snow", "user@spittr.com", "user", "password"));
+        spitters.add(new Spitter("Bruce", "Lee", "admin@spittr.com", "admin", "password"));
     }
 
     @Override

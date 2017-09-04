@@ -14,7 +14,7 @@ public class SpitterControllerTest {
 
     @Test
     public void shouldProcessRegistration() throws Exception {
-        Spitter spitter = new Spitter("John", "Snow", "bastard", "123");
+        Spitter spitter = new Spitter("John", "Snow", "bastard@spittr.com", "bastard", "123");
 
         SpitterRepository repository = mock(SpitterRepository.class);
         when(repository.getByUsername("bastard")).thenReturn(spitter);
@@ -27,7 +27,7 @@ public class SpitterControllerTest {
                 .param("lastName", "Snow")
                 .param("username", "bastard")
                 .param("password", "123"))
-                .andExpect(redirectedUrl("/spitter/bastard"));
+                .andExpect(redirectedUrl("/spitter/profile/bastard"));
 
         verify(repository, atLeastOnce()).save(spitter);
     }
