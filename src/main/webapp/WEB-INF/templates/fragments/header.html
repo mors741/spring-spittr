@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div th:fragment="header">
+    <ul>
+        <li>
+            <a href="#" th:href="@{/}">Home</a>
+        </li>
+        <li>
+            <a th:href="@{/spittles}">Spittles</a>
+        </li>
+        <li>
+            <a th:href="@{/spitter/register}">Register</a>
+        </li>
+        <li>
+            <a th:href="@{/spitter/profile/user}">Profile</a>
+        </li>
+        <li>
+            <a th:href="@{/login}">Sign in</a>
+        </li>
+        <li>
+            <a href="" onclick="$('#logout_form').submit();return false;">Sign out</a>
+            <form style="visibility: hidden" id="logout_form" method="post" th:action="@{/logout}"></form>
+        </li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</div>
+</body>
+</html>

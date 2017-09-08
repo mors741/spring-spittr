@@ -3,10 +3,11 @@
 <head>
     <title>Spittr</title>
     <link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"/>
+
 </head>
 <body>
+<div th:include="fragments/header :: header"></div>
 <h1>Welcome to Spittr</h1>
-<a th:href="@{/spittles}">Spittles</a> |
-<a th:href="@{/spitter/register}">Register</a>
+<div th:include="fragments/footer :: footer"></div>
 </body>
 </html>

@@ -5,9 +5,9 @@
     <link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"/>
 </head>
 <body>
+<div th:include="fragments/header :: header"></div>
 <h1>Recent Spittles</h1>
 <ul>
-    <!--/*@thymesVar id="spittleList" type="List<Spittle>"*/-->
     <li th:each="spittle : ${spittleList}" th:id="'spittle_' + ${spittle.id}">
         <a th:text="${spittle.message}" th:href="@{/spittles/{spittle_id}(spittle_id = ${spittle.id})}"></a>
 
@@ -17,5 +17,6 @@
         </div>
     </li>
 </ul>
+<div th:include="fragments/footer :: footer"></div>
 </body>
 </html>

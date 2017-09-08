@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"/>
 </head>
 <body>
+<div th:include="fragments/header :: header"></div>
 <h1>Your profile</h1>
 <span th:text="${spitter.username}"></span> <br>
 <span th:text="${spitter.firstName}"></span>
@@ -13,5 +14,6 @@
 <form method="POST" th:action="@{/logout}">
     <button type="submit">Logout</button>
 </form>
+<div th:include="fragments/footer :: footer"></div>
 </body>
 </html>

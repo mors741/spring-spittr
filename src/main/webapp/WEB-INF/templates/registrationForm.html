@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"/>
 </head>
 <body>
+<div th:include="fragments/header :: header"></div>
 <h1>Register</h1>
 <form method="POST" th:object="${spitter}" th:action="@{/spitter/register}">
 
@@ -35,5 +36,6 @@
 
     <input type="submit" value="Register"/>
 </form>
+<div th:include="fragments/footer :: footer"></div>
 </body>
 </html>
